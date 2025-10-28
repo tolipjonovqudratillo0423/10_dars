@@ -1,11 +1,40 @@
-.navbar a {
+.card{
   color: black;
   padding: 10px;
   text-decoration: none;
   transition: 0.3s ease; /* вот эта магия */
 }
 
-.navbar a:hover {
-  color: red;
-  transform: scale(1.07); /* лёгкий зум для живости */
+.card:hover {
+  color: rgb(255, 247, 0);
+  transform: scale(0.99); /* лёгкий зум для живости */
 }
+.row {
+  align-items: flex-start;
+}
+
+/* Forma tepada qotib qoladi */
+.submit_form {
+  background: rgba(255, 255, 255, 0.15);
+  position: fixed;
+  left: 70%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.45),
+              0 6px 20px rgba(0,0,0,0.35);
+  border-radius: 25px;
+  padding: 2%;
+  text-align: center;
+  padding-top: 30px;
+  height: 300px;
+
+  /* MANASI — forma yuqorida qotadi */
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+}
+.submit_form:hover {
+  color: rgb(255, 247, 0);
+  transform: scale(0.99); /* лёгкий зум для живости */
+}
+

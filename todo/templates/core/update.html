@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Todo</title>
+
+    {% load static %}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        /* ✅ BACKGROUND IMAGE (bu joyga static rasm yo'lini qo'yasan) */
+        body {
+            background-image: url("{% static 'image/update.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ✅ BLUR FORM CARD DESIGN */
+        .update-card {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 25px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+            color: #fff;
+        }
+
+        .update-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 4px rgba(0,0,0,0.8);
+        }
+
+        .btn-save {
+            width: 100%;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="update-card">
+        <h2>Update Todo ✅</h2>
+
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <!-- ✅ TITLE FIELD -->
+            <label for="title">Sarlavha</label>
+            <input type="text" name="title" id="title" class="form-control"
+                value="{{todo.title}}" required>
+            <br>
+
+            <!-- ✅ DESC FIELD -->
+            <label for="desc">Tavsif</label>
+            <textarea name="desc" id="desc" rows="3"
+                      class="form-control" required>{{todo.desc}}</textarea>
+            <br>
+
+            <!-- ✅ STATUS FIELD -->
+            <label for="status">Holati</label>
+            <select name="status" id="status" class="form-control">
+                <option value="Yangi"
+                    {% if todo.status == "Yangi" %}selected{% endif %}>Yangi</option>
+
+                <option value="Jarayonda"
+                    {% if todo.status == "Jarayonda" %}selected{% endif %}>Jarayonda</option>
+
+                <option value="Bajarilgan"
+                    {% if todo.status == "Bajarilgan" %}selected{% endif %}>Bajarilgan</option>
+            </select>
+
+            <br>
+
+            <!-- ✅ SAVE BUTTON -->
+            <button type="submit" class="btn btn-success btn-save">
+                Saqlash
+            </button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
