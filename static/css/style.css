@@ -1,0 +1,11 @@
+.navbar a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.3s ease; /* вот эта магия */
+}
+
+.navbar a:hover {
+  color: red;
+  transform: scale(1.07); /* лёгкий зум для живости */
+}
