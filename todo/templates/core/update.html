@@ -74,13 +74,13 @@
             <label for="status">Holati</label>
             <select name="status" id="status" class="form-control">
                 <option value="Yangi"
-                    {% if todo.status == "Yangi" %}selected{% endif %}>Yangi</option>
+                    {% if todo.status == "Yangi" %}selected{% endif %}>TODO</option>
 
                 <option value="Jarayonda"
-                    {% if todo.status == "Jarayonda" %}selected{% endif %}>Jarayonda</option>
+                    {% if todo.status == "Jarayonda" %}selected{% endif %}>DOING</option>
 
                 <option value="Bajarilgan"
-                    {% if todo.status == "Bajarilgan" %}selected{% endif %}>Bajarilgan</option>
+                    {% if todo.status == "Bajarilgan" %}selected{% endif %}>DONE</option>
             </select>
 
             <br>

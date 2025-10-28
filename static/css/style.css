@@ -34,7 +34,7 @@
   z-index: 10;
 }
 .submit_form:hover {
-  color: rgb(255, 247, 0);
+  color: rgb(0, 0, 0);
   transform: scale(0.99); /* лёгкий зум для живости */
 }
 
